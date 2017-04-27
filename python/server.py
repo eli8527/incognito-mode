@@ -75,6 +75,10 @@ def finish():
     randID = rand['id']
     answersToPrint = []
 
+    # If this participant didn't answer any questions
+    if entry == None:
+        return jsonify({'result': { 'id': uid, 'randId': randID, 'randQA': []}})
+
     randAnswerMap = build_dict(rand['answers'], key='qid')
 
     for answer in entry['answers']:
