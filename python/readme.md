@@ -9,7 +9,7 @@ Create a `db` folder in the root of this repo. Then from the root of the repo, r
 mongod --dbpath db
 ```
 
-Python side requires `Flask`, `Flask-PyMongo` and `PyMongo`. Once these packages are installed, fill the db with some fake data using: 
+Python side requires `flask`, `flask_pymongo`, `flask_cors`, and `pymongo`. Once these packages are installed, fill the db with some fake data using:
 
 ```
 python python/filldb.py

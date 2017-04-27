@@ -1,9 +1,11 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
-from flask.ext.pymongo import PyMongo
+from flask_pymongo import PyMongo
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['MONGO_DBNAME'] = 'incognitoModeDB'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/incognitoModeDB'
@@ -31,6 +33,7 @@ def getSessionData():
     return jsonify({'id' : currID, 'questions' : questionArray})
 
 @app.route('/submit', methods=['POST'])
+@cross_origin(allow_headers=['Content-Type'])
 def submit():
     req = request.get_json(force=True)
 
@@ -52,6 +55,7 @@ def submit():
     return jsonify({'result' : 'Success'})
 
 @app.route('/finish', methods=['POST'])
+@cross_origin(allow_headers=['Content-Type'])
 def finish():
     req = request.get_json(force=True)
 
@@ -62,7 +66,6 @@ def finish():
 
     entry = aCollection.find_one({'id': uid})
     rand = entry
-
     if mongo.db.command('collStats','answers')['count'] != 1:
         rand = aCollection.aggregate([{'$sample':{ 'size':1}}]).next()
 
