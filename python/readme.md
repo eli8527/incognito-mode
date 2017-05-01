@@ -9,7 +9,7 @@ Create a `db` folder in the root of this repo. Then from the root of the repo, r
 mongod --dbpath db
 ```
 
-Python side requires `flask`, `flask_pymongo`, `flask_cors`, and `pymongo`. Once these packages are installed, fill or reset the db with questions using:
+Python side requires `flask`, `flask_pymongo`, `flask_cors`, `python-escpos`, and `pymongo`. Once these packages are installed, fill or reset the db with questions using:
 
 ```
 python python/fillQuestions.py

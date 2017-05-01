@@ -3,6 +3,8 @@ from flask import jsonify
 from flask import request
 from flask_pymongo import PyMongo
 from flask_cors import CORS, cross_origin
+from printer import Receipt
+import popen2
 
 app = Flask(__name__)
 CORS(app)
@@ -97,6 +99,14 @@ def finish():
         }
 
         qaList.append(qaPair)
+
+    r = r = Receipt(uid, randID)
+    for qa in qaList:
+        r.addQuestionAnswer(qa['q'], qa['a'])
+
+    r.finalize()
+    r.saveToText("out.txt")
+    popen2.popen4("lpr -P THERMAL -o raw out.txt")
 
     return jsonify({'result': { 'id': uid, 'randId': randID, 'randQA': qaList}})
 
