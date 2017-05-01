@@ -9,3 +9,6 @@ npm start
 ```
 
 and navigate to `localhost:8000`.
+
+Login for iMac: `transactional`
+Password: `fred1`
