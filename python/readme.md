@@ -9,10 +9,10 @@ Create a `db` folder in the root of this repo. Then from the root of the repo, r
 mongod --dbpath db
 ```
 
-Python side requires `flask`, `flask_pymongo`, `flask_cors`, and `pymongo`. Once these packages are installed, fill the db with some fake data using:
+Python side requires `flask`, `flask_pymongo`, `flask_cors`, and `pymongo`. Once these packages are installed, fill or reset the db with questions using:
 
 ```
-python python/filldb.py
+python python/fillQuestions.py
 ```
 
 Then, start the server using:
@@ -22,5 +22,7 @@ python python/server.py
 ```
 
 I recommend using Robomongo for a Mongo GUI and Postman for POST/GET request testing.
+
+Questions are located at `python/questions.csv`
 
 API details can be found in [Google Doc](https://docs.google.com/document/d/1NBPKT-VvXealgVBVw30_xVoTiBgs9PkxJhbELzEFckg/edit).
