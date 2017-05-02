@@ -3,6 +3,9 @@ import request from 'ajax-request'
 export default (state, action) => {
 	switch (action.type) {
 
+		case 'BEGIN':
+			return {...state, sessionState: 0}
+
 		case 'BEGIN_SESSION':
 			return {
 				...state,
@@ -24,7 +27,7 @@ export default (state, action) => {
 					console.log(err);
 				}
 			});
-			return {...state, sessionState: 0};
+			return {...state, sessionState: -1};
 
 		case 'SUBMIT':
 			if (isValidAnswer(action.value)) {
