@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Instruction from './components/Instruction.jsx';
+import Intro from './components/Intro.jsx';
 import App from './components/App.jsx';
 
 import { createStore } from 'redux';
@@ -12,7 +13,7 @@ import { sampleQuestions } from './sampleQuestions.js';
 
 // Initialize store
 const store = createStore(session, {
-	sessionState: 0,
+	sessionState: -1,
 	id: -1,
 	questions: [],
 	index: -1,
@@ -24,6 +25,13 @@ const render = () => {
 	const rootEl = document.getElementById('react-root');
 
 	switch (state.sessionState) {
+		case -1:
+			ReactDOM.render(
+				<Intro onKeyPress={() => store.dispatch({ type: 'BEGIN' })} />,
+				rootEl
+			);
+			break;
+
 		case 0:
 			// Get user ID and question list from backend.
 			request({

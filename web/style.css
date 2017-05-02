@@ -16,6 +16,10 @@ p {
 	font-weight: normal;
 }
 
+.text-center {
+	text-align: center;
+}
+
 .fade-appear {
   opacity: 0;
 }
@@ -83,12 +87,19 @@ input, textarea {
 	text-align: center;
 }
 
-.button:hover {
+.button:hover, #fullscreen:hover {
 	opacity: 0.5;
 	transition: 0.3s;
 }
 
 .submit {
 	font-family: 'Garamond';
+}
+
+#fullscreen {
+	cursor: pointer;
+	position: fixed;
+	top: 10px;
+	right: 10px;
 }
 
