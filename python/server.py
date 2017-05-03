@@ -79,6 +79,7 @@ def finish():
 
     # If this participant didn't answer any questions
     if entry == None:
+        aCollection.insert_one({'id': uid, 'answers': []})
         r = Receipt(uid, randID)
         r.finalize()
         r.saveToText("out.txt")
