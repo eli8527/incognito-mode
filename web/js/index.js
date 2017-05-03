@@ -15,8 +15,8 @@ import { sampleQuestions } from './sampleQuestions.js';
 const store = createStore(session, {
 	sessionState: -1,
 	id: -1,
-	questions: [],
-	index: -1,
+	questions: sampleQuestions,
+	index: 0,
 });
 
 // Render the app.
@@ -38,9 +38,8 @@ const render = () => {
 			  url: 'http://localhost:5000/getSessionData',
 			  json: true
 			}, (err, res, body) => {
-				// For testing purposes.
 				if (err) {
-					body = { id: 392, questions: sampleQuestions };
+					body = { id: 392, questions: sampleQuestions }; // For testing purposes.
 				}
 
 				ReactDOM.render(
