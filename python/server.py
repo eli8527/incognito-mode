@@ -74,7 +74,11 @@ def finish():
         while rand['id'] == uid:
             rand = aCollection.aggregate([{'$sample':{ 'size':1}}]).next()
 
-    randID = rand['id']
+    randID = 0
+    if rand == None:
+        randID = uid
+    else:
+        randID = rand['id']
     answersToPrint = []
 
     # If this participant didn't answer any questions
