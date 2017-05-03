@@ -1,3 +1,21 @@
-|0| |Is jeff cool?| |short|
-|1| |what is jeff's favorite course?| |short|
-|2| |Who is Ryoji Ikeda?| |long|
+|1| |What is your name?| |short|
+|1| |How old are you?| |short|
+|1| |When is your birthday?| |short|
+|1| |How are you feeling today?| |long|
+|1| |Do you eat meat?| |short|
+|1| |How is the weather today?| |short|
+|1| |Who are you?| |long|
+|1| |Would you like to be famous? How so?| |long|
+|1| |What is your gender?| |short|
+|1| |Are you in a relationship?| |long|
+|1| |What's your favorite username you use online?| |short|
+|1| |What's your secret hunch on how you would die?| |long|
+|1| |Have you ever violated the honor code?| |short|
+|1| |If you could be any animal, which would you choose?| |short|
+|1| |What do you value most in friendship| |long|
+|1| |What is your GPA?| |short|
+|1| |What is your most treasured memory?| |long|
+|1| |What is your most terrible memory?| |long|
+|1| |Have you ever violated the honor code?| |short|
+|1| |Is there something you've dreamed of doing for a long time?| |long|
+|1| |Why haven't you done it?| |long|
