@@ -10,7 +10,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleSkip = this.handleSkip.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    // this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(e) {
@@ -28,11 +28,15 @@ class App extends React.Component {
     this.props.onSubmit('');
   }
 
-  handleKeyPress(e) {
-    if (e.key === 'Enter') {
-      this.handleClick();
-    }
+  hasValue() {
+    return !!this.state.value.trim();
   }
+
+  // handleKeyPress(e) {
+  //   if (e.key === 'Enter') {
+  //     this.handleClick();
+  //   }
+  // }
 
   renderInput(question) {
     switch (question.qtype) {
@@ -44,7 +48,8 @@ class App extends React.Component {
             type="text"
             value={this.state.value}
             onChange={this.handleChange}
-            onKeyPress={this.handleKeyPress} />
+            // onKeyPress={this.handleKeyPress}
+          />
         );
       case 'long':
         return (
@@ -54,8 +59,25 @@ class App extends React.Component {
             rows="5"
             value={this.state.value}
             onChange={this.handleChange}
-            onKeyPress={this.handleKeyPress} />
+            // onKeyPress={this.handleKeyPress}
+          />
         );
+    }
+  }
+
+  renderSubmitButton() {
+    if (this.hasValue()) {
+      return (
+        <div className="button">
+          <div className="submit" onClick={this.handleClick}>&rarr;</div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="button disabled">
+          <div className="submit">&rarr;</div>
+        </div>
+      );
     }
   }
 
@@ -87,9 +109,7 @@ class App extends React.Component {
           <div className="skip" onClick={this.handleSkip}>Skip</div>
         </div>
 
-        <div className="button">
-          <div className="submit" onClick={this.handleClick}>&rarr;</div>
-        </div>
+        { this.renderSubmitButton() }
       </div>
     );
   }
