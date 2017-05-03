@@ -17,12 +17,12 @@ class Intro extends React.Component {
       <CSSTransitionGroup
         transitionName="fade"
         transitionAppear={true}
-        transitionEnter={true}
-        transitionLeave={false}
+        transitionEnter={false}
+        transitionLeave={true}
         transitionAppearTimeout={500}
-        transitionEnterTimeout={500}
+        transitionLeaveTimeout={500}
       >
-        <p className="text-center">Press any key to begin.</p>
+        <p className="text-center fade-in-out">Press any key to begin.</p>
       </CSSTransitionGroup>
     );
   }

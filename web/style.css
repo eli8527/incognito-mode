@@ -11,6 +11,11 @@ body {
   user-select: none;
 }
 
+@font-face {
+  font-family: Garamond;
+  src: url(garamond_italic.ttf);
+}
+
 h1 {
   font-weight: normal;
 }
@@ -51,11 +56,21 @@ p {
   transition: opacity 0ms ease-in;
 }
 
+.fade-in-out {
+    opacity: 1;
+    animation: fade-in-out 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-out {
+  0%, 100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
 input, textarea {
   margin-top: 20px;
   padding: 0;
   width: 100%;
-  font-family: 'Garamond';
+  font-family: 'Garamond', serif;
   font-style: italic;
   font-size: 20px;
   color: white;
@@ -97,7 +112,7 @@ input, textarea {
 }
 
 .submit {
-  font-family: 'Garamond';
+  font-family: serif;
 }
 
 #fullscreen {

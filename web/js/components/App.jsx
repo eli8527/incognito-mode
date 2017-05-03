@@ -34,6 +34,7 @@ class App extends React.Component {
         return (
           <input
             autoFocus
+            spellCheck={false}
             type="text"
             value={this.state.value}
             onChange={this.handleChange}
@@ -43,6 +44,7 @@ class App extends React.Component {
         return (
           <textarea
             autoFocus
+            spellCheck={false}
             rows="5"
             value={this.state.value}
             onChange={this.handleChange}
