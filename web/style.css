@@ -97,12 +97,9 @@ input, textarea {
 .button>div {
   display: inline-block;
   cursor: pointer;
-  padding: 5px 10px;
   border: 1px solid white;
   border-radius: 5px;
   position: absolute;
-  right: 0;
-  font-size: 20px;
   text-align: center;
 }
 
@@ -111,8 +108,21 @@ input, textarea {
   transition: 0.3s;
 }
 
+.skip {
+  padding: 8px 12px 9px 12px;
+  right: 50px;
+}
+
 .submit {
+  padding: 5px 10px;
+  font-size: 20px;
   font-family: serif;
+  right: 0px;
+}
+
+.instruction {
+  padding: 8px 12px 9px 12px;
+  right: 0px;
 }
 
 #fullscreen {

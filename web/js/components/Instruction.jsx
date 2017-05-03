@@ -27,7 +27,7 @@ class Instruction extends React.Component {
         transitionEnterTimeout={500}
       >
         <div className="button">
-          <div onClick={this.props.onClick}>{this.props.btnText}</div>
+          <div className="instruction" onClick={this.props.onClick}>{this.props.btnText}</div>
         </div>
       </CSSTransitionGroup>
     ) : null;

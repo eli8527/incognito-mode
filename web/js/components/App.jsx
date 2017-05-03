@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSkip = this.handleSkip.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
@@ -16,15 +17,20 @@ class App extends React.Component {
     this.setState({value: e.target.value});
   }
 
-  handleClick(e) {
+  handleClick() {
+    const value = this.state.value;
     this.setState({ value: '' });
-    this.props.onSubmit(this.state.value);
+    this.props.onSubmit(value);
+  }
+
+  handleSkip() {
+    this.setState({ value: '' });
+    this.props.onSubmit('');
   }
 
   handleKeyPress(e) {
     if (e.key === 'Enter') {
-      this.setState({ value: '' });
-      this.props.onSubmit(this.state.value);
+      this.handleClick();
     }
   }
 
@@ -76,6 +82,10 @@ class App extends React.Component {
             </div>
           </div>
         </CSSTransitionGroup>
+
+        <div className="button">
+          <div className="skip" onClick={this.handleSkip}>Skip</div>
+        </div>
 
         <div className="button">
           <div className="submit" onClick={this.handleClick}>&rarr;</div>
