@@ -77,7 +77,11 @@ const render = () => {
 					btnText="Finish"
 					key={state.sessionState}
 				>
-					<p>Thank you. Please remember to take your receipt.</p>
+					<p>Thank you for participating.</p>
+					<p>Your receipt will print after you click 'Finish'.</p>
+					<p>By collecting and signing the receipt, you agree not to share its contents with anyone.</p>
+					<p>If you do not wish to sign the receipt, please do not read it and discard it immediately.</p>
+					<p>Have a nice day. &#9786;</p>
 				</Instruction>,
 				rootEl
 			);

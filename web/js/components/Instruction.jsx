@@ -13,7 +13,8 @@ class Instruction extends React.Component {
 
   render() {
     const delayMap = [
-      { at: /\./, delay: 500 }
+      { at: /\./, delay: 500 },
+      { at: /\,/, delay: 250 }
     ];
 
     const btn = this.state.showBtn ? (
