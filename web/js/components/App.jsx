@@ -45,7 +45,8 @@ class App extends React.Component {
             autoFocus
             rows="5"
             value={this.state.value}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress} />
         );
     }
   }
@@ -64,7 +65,7 @@ class App extends React.Component {
           transitionEnterTimeout={500}
         >
           <div key={question.qid}>
-            <h1>{this.props.index + 1}. {question.qtext}</h1>
+            <h1>{question.qtext}</h1>
 
             { this.renderInput(question) }
 
