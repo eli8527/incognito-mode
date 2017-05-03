@@ -11,6 +11,11 @@ body {
   user-select: none;
 }
 
+@font-face {
+  font-family: Garamond;
+  src: url(garamond_italic.ttf);
+}
+
 h1 {
   font-weight: normal;
 }
@@ -55,7 +60,7 @@ input, textarea {
   margin-top: 20px;
   padding: 0;
   width: 100%;
-  font-family: 'Garamond';
+  font-family: 'Garamond', serif;
   font-style: italic;
   font-size: 20px;
   color: white;
@@ -97,7 +102,7 @@ input, textarea {
 }
 
 .submit {
-  font-family: 'Garamond';
+  font-family: serif;
 }
 
 #fullscreen {
