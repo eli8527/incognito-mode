@@ -74,11 +74,16 @@ def finish():
         while rand['id'] == uid:
             rand = aCollection.aggregate([{'$sample':{ 'size':1}}]).next()
 
-    randID = rand['id']
+    randID = 0
+    if rand == None:
+        randID = uid
+    else:
+        randID = rand['id']
     answersToPrint = []
 
     # If this participant didn't answer any questions
     if entry == None:
+        aCollection.insert_one({'id': uid, 'answers': []})
         r = Receipt(uid, randID)
         r.finalize()
         r.saveToText("out.txt")
@@ -95,7 +100,7 @@ def finish():
         else:
             a = {
                 'qid': qid,
-                'answer': "The participant did not provide a response to this question."
+                'answer': " "
             }
             answersToPrint.append(a)
 
