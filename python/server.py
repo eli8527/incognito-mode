@@ -79,6 +79,10 @@ def finish():
 
     # If this participant didn't answer any questions
     if entry == None:
+        r = Receipt(uid, randID)
+        r.finalize()
+        r.saveToText("out.txt")
+        popen2.popen4("lpr -P THERMAL -o raw out.txt")
         return jsonify({'result': { 'id': uid, 'randId': randID, 'randQA': []}})
 
     randAnswerMap = build_dict(rand['answers'], key='qid')
@@ -100,7 +104,7 @@ def finish():
 
         qaList.append(qaPair)
 
-    r = r = Receipt(uid, randID)
+    r = Receipt(uid, randID)
     for qa in qaList:
         r.addQuestionAnswer(qa['q'], qa['a'])
 
