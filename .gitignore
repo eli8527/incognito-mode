@@ -2,4 +2,4 @@ db/
 .DS_Store
 *.log
 
-python/printer.pyc
+*.pyc

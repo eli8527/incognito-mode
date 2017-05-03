@@ -52,7 +52,7 @@ class Receipt:
         self.p.set("left","a", "NORMAL")
         self.p.line_spacing()
 
-        q = str(self.qanswered) + ". " + q
+        q = str("*") + " " + q
         qlines = textwrap.wrap(q, 30)
 
         for line in qlines:
