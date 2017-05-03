@@ -92,6 +92,12 @@ def finish():
 
         if qid in randAnswerMap:
             answersToPrint.append(randAnswerMap[qid])
+        else:
+            a = {
+                'qid': qid,
+                'answer': "The participant did not provide a response to this question."
+            }
+            answersToPrint.append(a)
 
     qaList = []
     for answer in answersToPrint:
