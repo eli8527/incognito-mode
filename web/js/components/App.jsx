@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = { value: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(e) {
@@ -20,6 +21,13 @@ class App extends React.Component {
     this.props.onSubmit(this.state.value);
   }
 
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.setState({ value: '' });
+      this.props.onSubmit(this.state.value);
+    }
+  }
+
   renderInput(question) {
     switch (question.qtype) {
       case 'short':
@@ -28,7 +36,8 @@ class App extends React.Component {
             autoFocus
             type="text"
             value={this.state.value}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress} />
         );
       case 'long':
         return (
