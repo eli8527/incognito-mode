@@ -1,3 +1,23 @@
-|0| |Is jeff cool?| |short|
-|1| |what is jeff's favorite course?| |short|
-|2| |Who is Ryoji Ikeda?| |long|
+|0| |What is your name?| |short|
+|1| |How old are you?| |short|
+|2| |When is your birthday?| |short|
+|3| |What is your gender?| |short|
+|4| |How are you feeling today?| |long|
+|5| |If you could be any animal, which would you choose? Why?| |long|
+|6| |Have you ever violated the honor code?| |short|
+|7| |What's the username you use online?| |short|
+|8| |If you could be anywhere right now, where would you be?| |long|
+|9| |Are you in a relationship? If so, with whom?| |long|
+|10| |Who is your favorite person in STC209?| |short|
+|11| |Do you eat meat?| |short|
+|12| |Would you like to be famous? If so how?| |long|
+|13| |What's your secret hunch on how you will die?| |long|
+|14| |What do you like most about yourself?| |long|
+|15| |What are you most self-conscious about?| |long|
+|16| |What do you value most in friendship?| |long|
+|17| |What is your GPA?| |short|
+|18| |How much did you donate this year?| |short|
+|19| |Is there something you've dreamed of doing for a long time? Why haven't you done it?| |long|
+|20| |What is your most treasured memory?| |long|
+|21| |What is your most terrible memory?| |long|
+|22| |Who are you?| |long|
