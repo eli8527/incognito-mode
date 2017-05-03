@@ -95,7 +95,7 @@ def finish():
         else:
             a = {
                 'qid': qid,
-                'answer': "The participant did not provide a response to this question."
+                'answer': " "
             }
             answersToPrint.append(a)
 
