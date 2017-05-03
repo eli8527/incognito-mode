@@ -20,25 +20,21 @@ class App extends React.Component {
     this.props.onSubmit(this.state.value);
   }
 
-  componentDidMount(){
-   this.input.focus();
-  }
-
   renderInput(question) {
     switch (question.qtype) {
       case 'short':
         return (
           <input
+            autoFocus
             type="text"
-            ref={(input) => { this.input = input }}
             value={this.state.value}
             onChange={this.handleChange} />
         );
       case 'long':
         return (
           <textarea
+            autoFocus
             rows="5"
-            ref={(input) => { this.input = input }}
             value={this.state.value}
             onChange={this.handleChange} />
         );
