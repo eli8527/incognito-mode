@@ -45,7 +45,8 @@ class App extends React.Component {
             autoFocus
             rows="5"
             value={this.state.value}
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress} />
         );
     }
   }
